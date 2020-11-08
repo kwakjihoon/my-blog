@@ -31,7 +31,7 @@
                 this.bodyFadeStatus = false;
                 setTimeout(()=>{
                     this.bodyFadeStatus = true;
-                },180)
+                },150)
             }
         }
     }

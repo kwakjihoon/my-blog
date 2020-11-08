@@ -1,8 +1,8 @@
 <template>
     <div>
         <blog-title></blog-title>
-        <div class="container">
-           <div v-html="text"></div>
+        <div class="container" style="margin-bottom: 100px">
+           <div v-html="text" class="markdown-body"></div>
         </div>
     </div>
 </template>
@@ -129,12 +129,15 @@ Sample text here...
 
 Syntax highlighting
 
-\`\`\` js
-var foo = function (bar) {
-  return bar++;
-};
 
-console.log(foo(5));
+\`\`\`
+class function{
+    public static void main(String args []){
+
+        System.out.println("123123123");
+
+    }
+}
 \`\`\`
 
 ## Tables

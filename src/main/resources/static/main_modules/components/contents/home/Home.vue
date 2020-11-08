@@ -1,7 +1,7 @@
 <template>
     <div>
         <home-title></home-title>
-        <div class="container">
+        <div class="container" style="margin-bottom: 100px">
             <h1>Blog content1</h1>
             <h1>Blog content2</h1>
             <h1>Blog content</h1>
