@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.jihoon</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>my-blog</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jihoon</name>
     <description>jihoon</description>

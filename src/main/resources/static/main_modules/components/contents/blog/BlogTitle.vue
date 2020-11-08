@@ -1,9 +1,9 @@
 <template>
     <div id="app-cotent-title">
         <div id="app-title">
-            <div class="title">{{title}}</div>
-            <div class="sub-title">{{subTitle}}</div>
-            <div class="m-3">2020.10.22</div>
+            <div class="title">{{content.title}}</div>
+            <div class="sub-title">{{content.subTitle}}</div>
+            <div class="m-3">{{content.lastUpdated}}</div>
         </div>
         <div></div>
     </div>
@@ -11,10 +11,18 @@
 <script>
     module.exports = {
         name: "BlogTitle.vue",
-        data(){
+        props:["netContent"]
+        ,updated(){
+
+        }
+        ,watch:{
+            netContent(){
+                console.log(this.netContent);
+            }
+        }
+        ,data(){
             return{
-                title:"Spring Framework 4.0",
-                subTitle:"안녕하세요"
+                content:{title:"Javascript",subTitle:"vue 3.x",lastUpdated:"2020.10.22"}
             }
         }
     }

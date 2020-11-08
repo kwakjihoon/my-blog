@@ -1,10 +1,10 @@
 <template>
-
+<div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid ">
             <router-link class="navbar-brand" to="/">
-                <i class="far fa-grimace"></i>
-                {{$store.state.appName}}
+                <i class="far fa-laugh-wink text-warning"></i>
+                {{$store.state.appName}} <span style="font-size: 20px"> {{subPath==""?"":" - "+subPath}}</span>
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,6 +21,7 @@
             </div>
         </div>
     </nav>
+</div>
 </template>
 
 <script>
@@ -28,18 +29,18 @@
         name: "AppNavbar.vue",
         mounted(){
             let menu =  this.menus.find(menu=> this.$route.path.indexOf(menu.path) > -1);
-            if (menu) menu.active = true;
+            this.changeNetMenu(menu);
             this.navbarCollapse = new bootstrap.Collapse(this.$refs.navbarCollapse, {
                 toggle: false
             })
         },
         data(){
             return{
-                menus:[{id:"link-01", name:"Blog", path:"/blog/1",active:false}
-                        ,{id:"link-02",name:"Contact", path:"/contact",active:false}
-                        ,{id:"link-03",name:"Dev Stack", path:"/dev-stack",active:false}
-                        ,{id:"link-04",name:"Git", path:"/git",active:false}]
-                ,navbarCollapse: null,
+                menus:[{id:"link-01", name:"Blog", path:"/blog",active:false}
+                        ,{id:"link-02",name:"Git", path:"/contact",active:false}
+                        ,{id:"link-04",name:"Contact", path:"/git",active:false}]
+                ,subPath:""
+                ,navbarCollapse: null
             }
         },
         watch:{
@@ -47,11 +48,20 @@
                 this.navbarCollapse.hide();
                 this.menus.forEach(menu => menu.active = false);
                 let menu = this.menus.find(menu => to.path.indexOf(menu.path) > -1);
-                if (menu) menu.active = true;
+                this.changeNetMenu(menu);
             }
         },
         methods:{
-
+            changeNetMenu(menu){
+                if (menu) {
+                    document.title = this.$store.state.appName +"-"+menu.name;
+                    this.subPath = menu.name;
+                    menu.active = true;
+                }else{
+                    document.title = this.$store.state.appName;
+                    this.subPath ="";
+                }
+            }
         }
 
     }

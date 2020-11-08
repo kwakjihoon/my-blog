@@ -1,8 +1,8 @@
 <template>
-    <div id="app-home-title">
-        <div id="app-title">
-            <div class="title">{{title}}</div>
-            <div class="sub-title">{{subTitle}}</div>
+    <div id="home-title">
+        <div id="title">
+            <div class="main-title">{{title}}</div>
+            <div class="sub-title text-dark">{{subTitle}}</div>
         </div>
     </div>
 </template>
@@ -11,29 +11,29 @@
         name: "HomeTitle.vue",
         data(){
             return{
-                title:"GY Technology",
-                subTitle:"-"
+                title:"기억을 더듬다",
+                subTitle:"By. Kwak Jihoon"
             }
         }
     }
 </script>
 
 <style scoped>
-    #app-home-title{
+    #home-title{
         height: 300px;
         width: 100%;
         background-color: #6c757d;
     }
-    #app-title{
+    #title{
         padding-top: 90px;
         text-align: center;
     }
-    #app-title .title{
+    .main-title{
         color: #dfe0e1;
         font-weight: bold;
         font-size: 40px;
     }
-    #app-title .sub-title{
+    .sub-title{
         font-size: 20px; 
         font-weight: bold;
     }

@@ -3,6 +3,8 @@
     "vue/dist/vue.esm.browser": "./vue/dist/vue.esm.browser.js",
     "http-vue-loader/src/httpVueLoader": "./http-vue-loader/src/httpVueLoader.js",
     "vuex/dist/vuex.esm.browser": "./vuex/dist/vuex.esm.browser.js",
-    "vue-router/dist/vue-router.esm.browser": "./vue-router/dist/vue-router.esm.browser.js"
+    "vue-router/dist/vue-router.esm.browser": "./vue-router/dist/vue-router.esm.browser.js",
+    "axios/dist/axios": "./axios/dist/axios.js",
+    "vue-axios/dist/vue-axios.es5": "./vue-axios/dist/vue-axios.es5.js"
   }
 }

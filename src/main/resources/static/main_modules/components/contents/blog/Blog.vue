@@ -1,7 +1,8 @@
 <template>
     <div>
-        <blog-title></blog-title>
+        <blog-title :net-content="netContent"></blog-title>
         <div class="container" style="margin-bottom: 100px">
+            <div>{{netContent}}</div>
            <div v-html="text" class="markdown-body"></div>
         </div>
     </div>
@@ -17,7 +18,6 @@
         async mounted(){
             //https://stackoverflow.com/questions/60433025/import-js-file-inside-vue-component-loaded-using-httpvueloader
             (await import("/others/markdown/markdown.js"));
-
             this.text =markdown.toHTML(`---
 __Advertisement :)__
 
@@ -267,11 +267,37 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 *here be dragons*
 :::
 `);
+        },
+        updated() {
+            const self = this;
+            this.$nextTick(function () {
+                console.log(self.$route.params.blogId);
+                if (self.$route.params.blogId){
+                    self.blogId = self.$route.params.blogId;
+                }else{
+                    self.blogId = 12;
+                }
+            });
+        },
+        watch:{
+            blogId(){
+                const self = this;
+                this.axios.get("/blog/"+this.blogId).then((res)=>{
+                    self.netContent = res.data;
+                    self.text = this.text =markdown.toHTML(res.data.content);
+                })
+            }
+        },
+        methods:{
 
         },
         data(){
             return{
-                text:""
+                blogId:""
+                ,netContent:{
+                    title:"",subTitle:"",titleImage:"",lastUpdatedDate:"",content:""
+                }
+                ,text:""
             }
         }
     }

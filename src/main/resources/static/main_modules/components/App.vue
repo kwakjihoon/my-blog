@@ -1,7 +1,9 @@
 
 <template>
     <div >
+
         <app-navbar></app-navbar>
+
         <app-body :class="bodyFadeStatus? 'in':''" class="fade"></app-body>
         <app-footer></app-footer>
     </div>
@@ -28,10 +30,12 @@
         },
         watch:{
             $route (to, from){
+                /*
                 this.bodyFadeStatus = false;
                 setTimeout(()=>{
                     this.bodyFadeStatus = true;
-                },150)
+                },50);*/
+                window.scrollTo({top:0, left:0, behavior:'auto'});
             }
         }
     }

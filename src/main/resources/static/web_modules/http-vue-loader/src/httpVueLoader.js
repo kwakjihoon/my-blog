@@ -1,8 +1,4 @@
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
+import { c as createCommonjsModule, a as commonjsGlobal } from '../../common/_commonjsHelpers-f5462f22.js';
 
 var httpVueLoader = createCommonjsModule(function (module, exports) {
 (function umd(root,factory){
