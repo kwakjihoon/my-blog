@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 
-@ComponentScan("com.jihoon.**")
 @SpringBootApplication
+@ComponentScan("com.jihoon.**")
 public class JihoonApplication {
 
     public static void main(String[] args) {

@@ -1,9 +1,7 @@
 
 <template>
-    <div >
-
+    <div>
         <app-navbar></app-navbar>
-
         <app-body :class="bodyFadeStatus? 'in':''" class="fade"></app-body>
         <app-footer></app-footer>
     </div>
@@ -30,11 +28,10 @@
         },
         watch:{
             $route (to, from){
-                /*
-                this.bodyFadeStatus = false;
-                setTimeout(()=>{
-                    this.bodyFadeStatus = true;
-                },50);*/
+                 this.bodyFadeStatus = false;
+                 setTimeout(()=>{
+                     this.bodyFadeStatus = true;
+                 },250);
                 window.scrollTo({top:0, left:0, behavior:'auto'});
             }
         }
@@ -43,10 +40,10 @@
 <style scoped>
     .fade {
         opacity: 0;
-        -webkit-transition: opacity 0.15s linear;
-        -moz-transition: opacity 0.15s linear;
-        -o-transition: opacity 0.15s linear;
-        transition: opacity 0.15s linear;
+        -webkit-transition: opacity 0.30s linear;
+        -moz-transition: opacity 0.30s linear;
+        -o-transition: opacity 0.30s linear;
+        transition: opacity 0.30s linear;
     }
     .fade.in {
         opacity: 1;

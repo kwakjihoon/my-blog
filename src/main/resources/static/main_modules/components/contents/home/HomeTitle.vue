@@ -1,6 +1,6 @@
 <template>
     <div id="home-title">
-        <div id="title">
+        <div id="title" class="container">
             <div class="main-title">{{title}}</div>
             <div class="sub-title text-dark">{{subTitle}}</div>
         </div>

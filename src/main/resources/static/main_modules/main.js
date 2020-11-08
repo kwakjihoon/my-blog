@@ -2,8 +2,8 @@ import Vue from '/web_modules/vue/dist/vue.esm.browser.js'
 import Vuex from '/web_modules/vuex/dist/vuex.esm.browser.js'
 import VueRouter from '/web_modules/vue-router/dist/vue-router.esm.browser.js'
 import httpVueLoader from '/web_modules/http-vue-loader/src/httpVueLoader.js'
-import commonAxios from '/others/modules/commonAxios/index'
-import VueAxios from "/web_modules/vue-axios/dist/vue-axios.es5";
+import commonAxios from '/others/modules/commonAxios/index.js'
+import VueAxios from "/web_modules/vue-axios/dist/vue-axios.es5.js";
 
 const App = 'url:/main_modules/components/App.vue';
 

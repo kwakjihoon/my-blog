@@ -4,7 +4,8 @@
         <div class="container-fluid ">
             <router-link class="navbar-brand" to="/">
                 <i class="far fa-laugh-wink text-warning"></i>
-                {{$store.state.appName}} <span style="font-size: 20px"> {{subPath==""?"":" - "+subPath}}</span>
+                {{$store.state.appName}}
+                <span style="font-size: 20px"> {{subPath==""?"":" - "+subPath}}</span>
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -68,9 +69,6 @@
 </script>
 
 <style scoped>
-    .nav-link.active{
-        background-color: #6c757d;
-    }
     .navbar-brand{
         font-size: 25px;
         font-weight: bold;
@@ -78,7 +76,5 @@
     .nav-item{
         text-align: center;
         font-size: 20px;
-    }
-    nav{
     }
 </style>

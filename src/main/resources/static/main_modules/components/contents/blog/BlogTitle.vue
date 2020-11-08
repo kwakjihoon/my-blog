@@ -1,9 +1,9 @@
 <template>
     <div id="app-cotent-title">
         <div id="app-title">
-            <div class="title">{{content.title}}</div>
-            <div class="sub-title">{{content.subTitle}}</div>
-            <div class="m-3">{{content.lastUpdated}}</div>
+            <div class="title">{{netContent.title}}</div>
+            <div class="sub-title">{{netContent.subTitle}}</div>
+            <div class="m-3">{{netContent.lastUpdated}}</div>
         </div>
         <div></div>
     </div>
@@ -12,9 +12,6 @@
     module.exports = {
         name: "BlogTitle.vue",
         props:["netContent"]
-        ,updated(){
-
-        }
         ,watch:{
             netContent(){
                 console.log(this.netContent);
@@ -22,7 +19,7 @@
         }
         ,data(){
             return{
-                content:{title:"Javascript",subTitle:"vue 3.x",lastUpdated:"2020.10.22"}
+
             }
         }
     }
